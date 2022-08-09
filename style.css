@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "DIN Next LT Pro Bold";
+  src: url("//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.eot");
+  src: url("//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.svg#DIN Next LT Pro Bold")
+      format("svg");
+}
+
+:root {
+  --v-red: #ff4655;
+  --v-white: #ece8e1;
+  --v-black: #0f1923;
+  --v-outline: rgba(236, 232, 225, 0.5);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	}
+.banner{
+	width: 100%;
+	height: 100vh;
+	background-image: Linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(back.gif);
+	background-size: cover;
+	background-position: center;
+}
+.navbar{
+	width: 85%;
+	margin: auto;
+	padding: 35px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.logo{
+	width: 120px;
+	cursor: pointer;
+}
+.navbar ul li{
+	list-style: none;
+	display:inline-block;
+	margin: 0 20px;
+	position: relative;
+}
+.navbar ul li a{
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+}
+.navbar ul li::after{
+	content: '';
+	height: 3px;
+	width: 0;
+	background: red;
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	transition: 0.5s;
+}
+.navbar ul li:hover::after{
+	width: 100%;
+}
+.content{
+	width:100%;
+	position: absolute;
+	top: 50%;
+	tranform: translateY(-50%);
+	text-align: center;
+	color: #fff;
+}
+.content h1{
+	font-size: 70px;
+	margin-top: 80px;
+}
+.content p{
+	margin: 20px auto;
+	font-weight: 100;
+	line-height: 25px;
+}
+::after,
+::before {
+  box-sizing: border-box;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 50%;
+}
+button {
+    font-family: 'DIN Next LT Pro Bold';
+    font-size: 1.9rem;
+    font-weight: 400;
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: .7rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--v-white);
+    border: 0;
+    background-color: transparent;
+}
+
+button:hover {
+    color: var(--v-white);
+}
+
+button::before, button::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(50% - .4rem);
+    content: '';
+    border: 1px solid var(--v-outline);
+    background-color: transparent;
+}
+
+button::before {
+    top: 0;
+    border-bottom: 0;
+}
+
+button::after {
+    bottom: 0;
+    border-top: 0;
+}
+
+/* Hover Effect */
+
+.hover-effect {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    content: '';
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transform: translateX(-100%) skew(-10deg);
+    background-color: var(--v-red);
+}
+
+button:hover .hover-effect {
+    transform: translateX(0) skew(-10deg);
+}
+
+/* LABEL  */
+
+.label {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.label:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+/* Label Text */
+
+.label-text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 1.9rem 3rem;
+}
+
+/* Right Bottom Corner dot */
+
+.label-text:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: .6rem;
+    height: .6rem;
+    content: '';
+    transition: background-color .2s ease-in;
+    background-color: var(--v-black);
+}
+
+button:hover .label-text:after {
+    background-color: var(--v-white);
+}
+/* OUTLINE BUTTON */
+.outline {
+  color: var(--v-white);
+}
+
+.outline .label::before,
+.outline .label::after {
+  border: 1px solid var(--v-outline);
+  }
